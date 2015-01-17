@@ -1,0 +1,13 @@
+CC=gcc
+SRCS=hello.c
+OBJS=$(SRCS:.c=.o)
+EXEC=hello
+start:$(OBJS)
+	$(CC) -o$(EXEC) $(OBJS)
+	@echo '---------ok------------'
+$(OBJS):
+	$(CC) -c $(SRCS)
+
+clean:
+	@rm -f $(OBJS) $(EXEC)
+	@echo '---------clean---------'

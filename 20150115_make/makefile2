@@ -1,0 +1,14 @@
+.SUFFIXES:.c .o
+CC=gcc
+SRCS=hello.c
+OBJS=$(SRCS:.c=.o)
+EXEC=hello
+start:$(OBJS)
+	$(CC) -o$(EXEC) $(OBJS)
+	@echo '---------ok------------'
+.c.o:
+	$(CC) -c $< -o$@
+
+clean:
+	@rm -f $(OBJS) $(EXEC)
+	@echo '---------clean---------'
