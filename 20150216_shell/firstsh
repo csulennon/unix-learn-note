@@ -1,0 +1,10 @@
+#! /bin/sh
+a=3
+b=5
+#$a=a
+#$b=b
+if(test "$a"="$b") then
+	echo a=b
+else
+	echo a != b
+fi

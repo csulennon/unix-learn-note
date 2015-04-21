@@ -1,0 +1,7 @@
+#!/bin/sh
+WHOAMI=`whoami`
+
+PID=`ps -u $WHOAMI | grep deamond | awk '{print $1}'`
+if (test "$PID" = "") then
+	./deamond
+fi
